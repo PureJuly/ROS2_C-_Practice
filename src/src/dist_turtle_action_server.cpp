@@ -1,40 +1,20 @@
-#include <iostream>
+#include <memory>
+#include <thread>
+#include <cmath>
+#include <chrono>
 
-#include "rclcpp.h"
-#include "turtlesim.h"
-#include "geometry_msgs.h"
-#include "my_second_package_msgs.h"
-#include "my_second_package.h"
-#include "rcl_interfaces.h"
+#include "rclcpp/rclcpp.hpp"
+#include "rclcpp_action/rclcpp_action.hpp"
+#include "geometry_msgs/msg/twist.hpp"
+#include "turtlesim/msg/pse.hpp"
+#include "my_second_package_msgs/action/dist_turtle.hpp"
 
-using rclcpp::action;
-using rclcpp::executors;
-using rclcpp::node;
+using namespace std::chrono_literals;
 
-using turtlesim::msg;
-using geometry_msgs::msg;
-using my_second_package_msgs::action;
-using my_second_package::my_subscriber;
-
-using rcl_interfaces::msg;
-
-#include <math.h>
-#include <time.h>
-
-class TurtleSub_Action: public TurtlesimSubscriber {}
+class DistTurtleServer : public rclcpp::Node 
+{
+public:
+  using DistTurtle = my_second_package_msgs::action::DistTurtle;
+  using GoalHandleDistTurtle = rclcpp_action::ServerGoalHandle<DistTurtle>;
   
-  TurtleSub_Action() {};
-
-  void callback()
-
-class DistTurtleServer: public Node {}
-  
-  DistTurtleServer() {};
-
-  void parameter_callback() {};
-
-  void calc_diff_pose() {};
-
-  void execute_callback() {};
-
-int main() {};
+}
