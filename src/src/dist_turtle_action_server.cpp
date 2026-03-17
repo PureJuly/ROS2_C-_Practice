@@ -21,22 +21,20 @@ using rcl_interfaces::msg;
 #include <math.h>
 #include <time.h>
 
-class TurtleSub_Action: public TurtlesimSubscriber 
-{
-  public:
-    TurtleSub_Action(ac_server)
-    {
-      this->ac_server = ac_server;
-    }
-
-  void callback(msg)
-    {
-      this->ac_server.current_pose = msg;
-    }
-};
-
-class DistTurtleServer: public Node
-{
+class TurtleSub_Action: public TurtlesimSubscriber {}
   
-}
+  TurtleSub_Action() {};
 
+  void callback()
+
+class DistTurtleServer: public Node {}
+  
+  DistTurtleServer() {};
+
+  void parameter_callback() {};
+
+  void calc_diff_pose() {};
+
+  void execute_callback() {};
+
+int main() {};
